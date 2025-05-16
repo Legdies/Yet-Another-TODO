@@ -1,7 +1,8 @@
-import time
+import logging
 import os
 import readchar
 from utils import clear, FileManager, general_check
+logger = logging.getLogger(__name__)
 
 
 class MainCLI(FileManager):
@@ -16,7 +17,7 @@ class MainCLI(FileManager):
             print(f"Can't run QT: {ErrorCode}")
             input("Press Enter to continue in CLI...")
 
-    def init_shell(self) -> None | Exception:
+    def init_shell(self) -> None:
         try:
             #OS check
             if not os.name == "nt":
@@ -29,7 +30,8 @@ class MainCLI(FileManager):
                 return None
             return None
         except Exception as e:
-            return e
+            logger.error(e)
+            raise
 
     def basic_shell_input(self):
         self.init_shell()
