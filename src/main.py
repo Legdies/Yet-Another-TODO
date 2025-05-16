@@ -3,9 +3,10 @@ import os
 import readchar
 from utils import clear, FileManager, general_check
 logging.basicConfig(
-    level=logging.INFO,  # уровень логирования (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
 logger = logging.getLogger(__name__)
 
 
@@ -20,6 +21,7 @@ class MainCLI(FileManager):
         else:
             print(f"Can't run QT: {ErrorCode}")
             input("Press Enter to continue in CLI...")
+
 
     def init_shell(self) -> None:
         try:
@@ -38,7 +40,7 @@ class MainCLI(FileManager):
             raise
 
     def basic_shell_input(self):
-        self.init_shell()
+
         clear()
         is_exit_pressed = False
         while not is_exit_pressed:
@@ -57,6 +59,9 @@ class MainCLI(FileManager):
                     self.create_file()
                 if selected == 0:
                     self.edit_file()
+            else:
+                print("Invalid key.")
+                input("Press Enter to continue...")
         pass
 
 

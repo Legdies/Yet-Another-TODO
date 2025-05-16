@@ -8,6 +8,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
