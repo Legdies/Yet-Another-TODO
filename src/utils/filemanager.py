@@ -2,7 +2,12 @@ from utils.models import FileManagerModel
 from utils.expansion import clear
 import logging
 
+logging.basicConfig(
+    level=logging.INFO,  # уровень логирования (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
+
 
 class FileManager(FileManagerModel):
     fm = FileManagerModel()

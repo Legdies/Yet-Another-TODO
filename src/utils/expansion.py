@@ -2,7 +2,10 @@ import os
 import sys
 from utils.exceptions import DisplayError
 import logging
-
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 def clear():
@@ -18,7 +21,7 @@ def general_check() -> tuple[bool,str]:
             import PyQt5
             return True, "PyQt5 is available and GUI display is detected"
         except ImportError:
-            logger.error(ImportError("Error: PyQt5 is not available"))
+            logger.error(ImportError("PyQt5 is not available"))
             raise
     except Exception as e:
         return False, str(e)

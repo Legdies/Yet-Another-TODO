@@ -2,7 +2,10 @@ import logging
 import os
 import readchar
 from utils import clear, FileManager, general_check
-
+logging.basicConfig(
+    level=logging.INFO,  # уровень логирования (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 
