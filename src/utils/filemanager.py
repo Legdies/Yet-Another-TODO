@@ -1,6 +1,8 @@
 from utils.models import FileManagerModel
 from utils.expansion import clear
-import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 class FileManager(FileManagerModel):
     fm = FileManagerModel()
@@ -9,7 +11,8 @@ class FileManager(FileManagerModel):
     buttonsMain = ["Open File", "Create File", "Exit"]
 
     def edit_file(self):
-        print(f"Edit Mode WIP: returning standart path {self.path}")
+        logger.info("Editing File on")
+        print(f"Edit Mode WIP: returning standard path {self.path}")
         input("Press Enter to continue...")
         clear()
 

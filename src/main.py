@@ -2,6 +2,7 @@ import logging
 import os
 import readchar
 from utils import clear, FileManager, general_check
+
 logger = logging.getLogger(__name__)
 
 
@@ -55,5 +56,5 @@ class MainCLI(FileManager):
                     self.edit_file()
         pass
 
-MainCLI().basic_shell_input()
 
+MainCLI().basic_shell_input()
