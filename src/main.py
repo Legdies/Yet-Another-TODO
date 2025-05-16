@@ -16,20 +16,15 @@ class MainCLI(FileManager):
             print(f"Can't run QT: {ErrorCode}")
             input("Press Enter to continue in CLI...")
 
-    def init_shell(self) -> Exception | None:
+    def init_shell(self) -> None | Exception:
         try:
             #OS check
-            print("Verifying OS...")
             if not os.name == "nt":
-                print("This is not a Windows, using ~/TODO as base folder")
                 self.fm.path = os.path.expanduser("~/TODO")
                 return None
 
             #Is the dir exist?
-            print("Verifying folder...")
-            time.sleep(0.5)
             if not os.path.exists(self.fm.path):
-                print("Folder not exist, creating...")
                 os.mkdir(self.fm.path)
                 return None
             return None
