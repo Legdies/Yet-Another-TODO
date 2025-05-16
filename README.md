@@ -1,5 +1,10 @@
-### Yet-Another-TODO
+# Yet-Another-TODO
 
-Would be another boring TODO, with GUI and CLI support through
+Would be another boring TODO — but GUI and CLI support through.
 
-current version doesn't work at all, but it already can find out if you have headless posix or nt system, and support Qt.
+#### Current status:
+Doesn't really work yet, but it can already detect if you're running on headless POSIX or Windows (NT) — and it supports Qt.
+
+### TODO:
+- Create TODO - done
+- Finish TODO - WIP
