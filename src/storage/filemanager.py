@@ -3,6 +3,9 @@ from utils.expansion import clear
 import logging
 import os
 import io
+import readchar
+import json
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -29,7 +32,21 @@ class FileManager(FileManagerModel):
         print(f"Edit Mode WIP: returning standard path {self.path}")
         for idx, i in enumerate(FileManager().sub_menu):
             print(f"{idx}: {i}")
-        input("Press Enter to continue...")
+        user_input = readchar.readchar()
+        if user_input in "012":
+            if user_input == "0":
+                    tmp = ""
+                    with io.open(path + "\\" + filename, "r", encoding="utf-8") as f:
+                        tmp = f.read()
+                        f.close()
+
+                    print(json.loads(tmp))
+
+
+                    input("Press Enter to continue in CLI...")
+            else:
+                print("Command not callable")
+
         clear()
 
     def create_file(self):
