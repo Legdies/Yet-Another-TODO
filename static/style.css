@@ -1,0 +1,77 @@
+/* Custom styles for Yet Another TODO */
+
+.task-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.task-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.priority-urgent {
+    border-left: 4px solid #ef4444;
+}
+
+.priority-high {
+    border-left: 4px solid #f97316;
+}
+
+.priority-medium {
+    border-left: 4px solid #eab308;
+}
+
+.priority-low {
+    border-left: 4px solid #6b7280;
+}
+
+.status-completed {
+    opacity: 0.7;
+}
+
+.status-completed .task-name {
+    text-decoration: line-through;
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    border-top-color: #3b82f6;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form enhancements */
+.form-input:focus {
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Button hover effects */
+.btn-primary {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+    .task-card {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
