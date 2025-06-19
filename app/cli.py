@@ -4,6 +4,9 @@ from typing import Optional
 import logging
 from datetime import datetime, date
 
+# Add the parent directory to the path so we can import from app
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from app.storage import TaskStorage
 from app.models import TaskStatus, TaskPriority
 
